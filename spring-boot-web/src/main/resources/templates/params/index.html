@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Send RequestParams Get-URL</title>
+</head>
+<body>
+	<h1>Send RequestParams Get-URL</h1>
+	<ul>
+		<li><a th:href="@{/params/string(text='Hello RequestParam!')}">/params/string?text=Hello RequestParam!</a></li>
+		<li><a th:href="@{/params/string(text='Testing RequestParam...')}">/params/string?text=Testing RequestParam...</a></li>
+		<li><a th:href="@{/params/mix-params(greetings='Welcome RequestParam', number=2)}">/params/mix-params?greetings=Welcome RequestParam&number=2</a></li>
+		<li><a th:href="@{/params/mix-params-legacy(greetings='Welcome RequestParam', number=2)}">/params/mix-params-legacy?greetings=Welcome RequestParam&number=2</a></li>
+	</ul>
+</body>
+</html>

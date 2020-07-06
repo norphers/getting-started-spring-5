@@ -1,3 +1,4 @@
+/*
 package com.udemy.springboot.web.app.controllers;
 
 //import java.util.Map;
@@ -27,19 +28,20 @@ public class DemoController
 		return "index";
 	}
 
-	/* Option 2 : Map
+	Option 2 : Map
 	public String index(Map<String, Object> map)
 	{
 		map.put("title_Map", "Hello Spring! (Map)");
 		return "index";
-	} */
+	}
 	
-	/* Option 3 : Model-And-View
+	Option 3 : Model-And-View
 	public ModelAndView index(ModelAndView mv)
 	{
 		mv.addObject("title_ModelAndView", "Hello Spring! (ModelAndView)");
 		mv.setViewName("index");
 		return mv;
-	} */
+	}
 	
 }
+*/

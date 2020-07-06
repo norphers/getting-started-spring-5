@@ -8,7 +8,6 @@
 	<h1 th:text="${title}"></h1>
 	<br>
 	<div th:if="${users.isEmpty()}">There are no users in the list.</div>
-
 	<table th:if="${!users.isEmpty()}">
 		<thead>
 			<tr>
@@ -25,6 +24,5 @@
 			</tr>
 		</tbody>
 	</table>
-
 </body>
 </html>
