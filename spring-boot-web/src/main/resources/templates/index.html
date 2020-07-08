@@ -3,9 +3,12 @@
 <head>
 <meta charset="UTF-8" /> <!-- '/' isn't needed in html5 but it's a must in Thymeleaf -->
 <title>Home</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"></link>
 </head>
 <body>
-	<h1 th:text="${title}"></h1> 
+	<h1 class="color-red" th:text="${title}"></h1>
+	<h2 class="color-blue">CSS resources</h2>
+	<img th:src="@{/images/spring-framework-logo.png}"></img>
 	<table th:if="${!users.isEmpty()}">
 		<thead>
 			<tr>

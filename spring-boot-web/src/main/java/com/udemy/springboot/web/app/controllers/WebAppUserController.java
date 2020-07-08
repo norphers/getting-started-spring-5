@@ -3,6 +3,7 @@ package com.udemy.springboot.web.app.controllers;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,10 +16,19 @@ import com.udemy.springboot.web.app.models.WebAppUser;
 @RequestMapping("/api")
 public class WebAppUserController 
 {
+	@Value("${text.webAppUserController.home.title}")
+	private String homeTitle;
+	
+	@Value("${text.webAppUserController.user-profile.title}")
+	private String userProfileTitle;
+	
+	@Value("${text.webAppUserController.user-list.title}")
+	private String userListTitle;
+	
 	@GetMapping({"/index", "/", "/home"})
 	public String index(Model model)
 	{
-		model.addAttribute("title", "Hello Spring!");
+		model.addAttribute("title", homeTitle);
 		return "index";
 	}
 	
@@ -31,16 +41,15 @@ public class WebAppUserController
 		user.setEmail("john.doe@example.com");
 		
 		model.addAttribute("user", user);
-		model.addAttribute("title", "User profile: ".concat(user.getFirstName()));
+		model.addAttribute("title", userProfileTitle + ": " + user.getFirstName());
 		
 		return "user-profile";
 	}
 	
-	@RequestMapping("/list")
+	@RequestMapping("/user-list")
 	public String list(Model model)
 	{
-		model.addAttribute("title", "User list");
-		
+		model.addAttribute("title", userListTitle);
 		return "list";
 	}
 	
